@@ -1,6 +1,6 @@
 [build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
+requires = ["uv_build>=0.10.4,<0.11.0"]
+build-backend = "uv_build"
 
 [project]
 name = "lib_mov_top_list"
@@ -27,11 +27,8 @@ dependencies = [
 
 [dependency-groups]
 dev = [
-    "pytest>=9.0.0",
-    "pytest-cov>=7.0.0",
     "ruff>=0.14.14",
     "ty>=0.0.14",
-    "hatch>=1.16.3",
     "prek>=0.1.0",
     "pysentry-rs>=0.1.0",
 ]
@@ -42,24 +39,6 @@ Documentation = "https://heidenbloed.github.io/lib-mov-top-list"
 Repository = "https://github.com/heidenbloed/lib-mov-top-list"
 Issues = "https://github.com/heidenbloed/lib-mov-top-list/issues"
 Changelog = "https://github.com/heidenbloed/lib-mov-top-list/blob/main/CHANGELOG.md"
-
-# =============================================================================
-# Hatch
-# =============================================================================
-
-[tool.hatch.build.targets.sdist]
-include = [
-    "/src",
-]
-
-[tool.hatch.build.targets.wheel]
-packages = ["src/lib_mov_top_list"]
-
-# Matrix testing across Python versions
-[tool.hatch.envs.test]
-
-[[tool.hatch.envs.test.matrix]]
-python = ["3.13"]
 
 # =============================================================================
 # Ruff
@@ -99,48 +78,3 @@ known-first-party = ["lib_mov_top_list"]
 
 [tool.ty.src]
 include = ["**/*.py"]
-
-# =============================================================================
-# Pytest
-# =============================================================================
-
-[tool.pytest.ini_options]
-testpaths = ["tests"]
-pythonpath = ["src"]
-addopts = [
-    "-ra",
-    "-q",
-    "--strict-markers",
-    "--strict-config",
-]
-markers = [
-    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
-]
-
-# =============================================================================
-# Coverage
-# =============================================================================
-
-[tool.coverage.run]
-source = ["src/lib_mov_top_list"]
-branch = true
-parallel = true
-
-[tool.coverage.report]
-exclude_lines = [
-    "pragma: no cover",
-    "def __repr__",
-    "raise AssertionError",
-    "raise NotImplementedError",
-    "if __name__ == .__main__.:",
-    "if TYPE_CHECKING:",
-    "@abstractmethod",
-]
-show_missing = true
-
-# =============================================================================
-# git-cliff (Changelog generation)
-# =============================================================================
-
-[tool.git-cliff]
-config = "cliff.toml"
