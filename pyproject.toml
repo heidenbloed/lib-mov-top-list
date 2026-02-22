@@ -21,10 +21,7 @@ classifiers = [
     "Typing :: Typed",
 ]
 keywords = []
-dependencies = [
-    "scrapy>=2.14.1",
-    "sruthi>=2.0.0",
-]
+dependencies = ["requests>=2.32.5", "sruthi>=2.0.0"]
 
 [dependency-groups]
 dev = ["ruff>=0.14.14", "ty>=0.0.14", "prek>=0.1.0", "pysentry-rs>=0.1.0"]
