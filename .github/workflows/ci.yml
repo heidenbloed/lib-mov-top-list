@@ -29,10 +29,13 @@ jobs:
         run: uv python install 3.13
 
       - name: Install dependencies
-        run: make install
+        run: uv sync --all-groups
 
-      - name: Lint and format check
-        run: make lint format-check
+      - name: Lint
+        run: uv run ruff check .
+
+      - name: Format check
+        run: uv run ruff format --check .
 
   type-check:
     name: Type Check
@@ -49,35 +52,10 @@ jobs:
         run: uv python install 3.13
 
       - name: Install dependencies
-        run: make install
+        run: uv sync --all-groups
 
       - name: Run ty type checker
-        run: make type-check
-
-  test:
-    name: Test (Python ${{ matrix.python-version }})
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        python-version: ["3.13"]
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Install uv
-        uses: astral-sh/setup-uv@v4
-        with:
-          enable-cache: true
-
-      - name: Set up Python ${{ matrix.python-version }}
-        run: uv python install ${{ matrix.python-version }}
-
-      - name: Install dependencies
-        run: make install
-
-      - name: Run tests with coverage
-        run: make test-cov
+        run: uv run ty check
 
   secrets_and_dependency_scan:
     name: Secret and Dependency Scan
@@ -92,8 +70,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: astral-sh/setup-uv@v5
-      - run: make install
-      - run: make pysentry
+      - run: uv sync --all-groups
+      - run: uv run pysentry-rs
 
   sast_with_semgrep:
     name: semgrep scan

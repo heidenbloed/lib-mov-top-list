@@ -1,14 +1,13 @@
 [build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
+requires = ["uv_build>=0.10.4,<0.11.0"]
+build-backend = "uv_build"
 
 [project]
 name = "lib_mov_top_list"
 version = "0.1.0"
 description = "Creates a Library Movies Top List."
-readme = "README.md"
 license = "MIT"
-requires-python = ">=3.13"
+requires-python = ">=3.14"
 authors = [
     { name = "heidenbloed", email = "69988488+heidenbloed@users.noreply.github.com" },
 ]
@@ -18,23 +17,14 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
     "Typing :: Typed",
 ]
 keywords = []
-dependencies = [
-]
+dependencies = ["requests>=2.32.5", "sruthi>=2.0.0"]
 
 [dependency-groups]
-dev = [
-    "pytest>=9.0.0",
-    "pytest-cov>=7.0.0",
-    "ruff>=0.14.14",
-    "ty>=0.0.14",
-    "hatch>=1.16.3",
-    "prek>=0.1.0",
-    "pysentry-rs>=0.1.0",
-]
+dev = ["ruff>=0.14.14", "ty>=0.0.14", "prek>=0.1.0", "pysentry-rs>=0.1.0"]
 
 [project.urls]
 Homepage = "https://github.com/heidenbloed/lib-mov-top-list"
@@ -42,24 +32,6 @@ Documentation = "https://heidenbloed.github.io/lib-mov-top-list"
 Repository = "https://github.com/heidenbloed/lib-mov-top-list"
 Issues = "https://github.com/heidenbloed/lib-mov-top-list/issues"
 Changelog = "https://github.com/heidenbloed/lib-mov-top-list/blob/main/CHANGELOG.md"
-
-# =============================================================================
-# Hatch
-# =============================================================================
-
-[tool.hatch.build.targets.sdist]
-include = [
-    "/src",
-]
-
-[tool.hatch.build.targets.wheel]
-packages = ["src/lib_mov_top_list"]
-
-# Matrix testing across Python versions
-[tool.hatch.envs.test]
-
-[[tool.hatch.envs.test.matrix]]
-python = ["3.13"]
 
 # =============================================================================
 # Ruff
@@ -72,19 +44,19 @@ src = ["src", "tests"]
 
 [tool.ruff.lint]
 select = [
-    "E",      # pycodestyle errors
-    "W",      # pycodestyle warnings
-    "F",      # Pyflakes
-    "I",      # isort
-    "B",      # flake8-bugbear
-    "C4",     # flake8-comprehensions
-    "UP",     # pyupgrade
-    "ARG",    # flake8-unused-arguments
-    "SIM",    # flake8-simplify
-    "TCH",    # flake8-type-checking
-    "PTH",    # flake8-use-pathlib
-    "ERA",    # eradicate
-    "RUF",    # Ruff-specific rules
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # Pyflakes
+    "I",   # isort
+    "B",   # flake8-bugbear
+    "C4",  # flake8-comprehensions
+    "UP",  # pyupgrade
+    "ARG", # flake8-unused-arguments
+    "SIM", # flake8-simplify
+    "TCH", # flake8-type-checking
+    "PTH", # flake8-use-pathlib
+    "ERA", # eradicate
+    "RUF", # Ruff-specific rules
 ]
 
 [tool.ruff.lint.isort]
@@ -99,48 +71,3 @@ known-first-party = ["lib_mov_top_list"]
 
 [tool.ty.src]
 include = ["**/*.py"]
-
-# =============================================================================
-# Pytest
-# =============================================================================
-
-[tool.pytest.ini_options]
-testpaths = ["tests"]
-pythonpath = ["src"]
-addopts = [
-    "-ra",
-    "-q",
-    "--strict-markers",
-    "--strict-config",
-]
-markers = [
-    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
-]
-
-# =============================================================================
-# Coverage
-# =============================================================================
-
-[tool.coverage.run]
-source = ["src/lib_mov_top_list"]
-branch = true
-parallel = true
-
-[tool.coverage.report]
-exclude_lines = [
-    "pragma: no cover",
-    "def __repr__",
-    "raise AssertionError",
-    "raise NotImplementedError",
-    "if __name__ == .__main__.:",
-    "if TYPE_CHECKING:",
-    "@abstractmethod",
-]
-show_missing = true
-
-# =============================================================================
-# git-cliff (Changelog generation)
-# =============================================================================
-
-[tool.git-cliff]
-config = "cliff.toml"
