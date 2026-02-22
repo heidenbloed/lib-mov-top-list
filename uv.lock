@@ -1,6 +1,6 @@
 version = 1
 revision = 3
-requires-python = ">=3.13"
+requires-python = ">=3.14"
 
 [[package]]
 name = "lib-mov-top-list"
@@ -55,16 +55,6 @@ version = "0.4.2"
 source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/ca/7a/f2a7a46b6aba5f4588d3e38bef106baa3a5df48dd9e614ae68b7d92ce5b6/pysentry_rs-0.4.2.tar.gz", hash = "sha256:693e83ba7998fa914c666a15362d27ca674406fa3b6785be85772f063e1f393d", size = 598945, upload-time = "2026-02-19T18:26:27.191Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/0e/e3/7e1e50e22ecd2e7c73ada41d0221b16d3c71bcc2c520f39786e916f88c17/pysentry_rs-0.4.2-cp313-cp313-macosx_10_12_x86_64.whl", hash = "sha256:ddd566470b3322fee41ddf43babe449d5546f8057a8183285ce1aac052c54c6d", size = 4530773, upload-time = "2026-02-19T18:25:38.58Z" },
-    { url = "https://files.pythonhosted.org/packages/e5/82/2d88c4d1a5aa9bcb7624e701ee4ab76fb19e43269ebd8c9de8a51fe9d407/pysentry_rs-0.4.2-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:ab9df42e7a41e65b188ba2ac083f3e60b064a6d19c3718a6130e039bda8e7737", size = 4310037, upload-time = "2026-02-19T18:25:40.295Z" },
-    { url = "https://files.pythonhosted.org/packages/cf/f5/09b1153e0c66928936793dfc7c7614620a3677ac523f9ce66edec8a119bc/pysentry_rs-0.4.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:854cfa5bf938ea80dabe19b156727daf2023e61fcb91bb5fc113c7093a726238", size = 4801115, upload-time = "2026-02-19T18:25:42.365Z" },
-    { url = "https://files.pythonhosted.org/packages/d3/ee/ed573d44df093c175a8d8dfdd8ee8beb2343607cff7a9dab5f77e8b4ca31/pysentry_rs-0.4.2-cp313-cp313-manylinux_2_28_aarch64.whl", hash = "sha256:de4cc7d5a902d7bae7b64401d51e25daf3ca46e1c0b0e9b40c3d7f65d392f832", size = 4744140, upload-time = "2026-02-19T18:25:44.038Z" },
-    { url = "https://files.pythonhosted.org/packages/65/84/1176c3ae0b70c85457c35f1504249e46602aaa3501c9cf1babeaa7c39f91/pysentry_rs-0.4.2-cp313-cp313-win_amd64.whl", hash = "sha256:b318871a05960fd648110e34783d01a57c889758cccd65cf82dd88e87ec471f4", size = 4117012, upload-time = "2026-02-19T18:25:46.191Z" },
-    { url = "https://files.pythonhosted.org/packages/7b/07/6d5495eae6b8ac08b17b38a1e41778a4e5e64d79ed530d6c9b599e7a98a6/pysentry_rs-0.4.2-cp313-cp313t-macosx_10_12_x86_64.whl", hash = "sha256:09675f5c735f0b1bef5d8cc9856bcf3afc9497317bf53bd36eff02ce98b34155", size = 4529901, upload-time = "2026-02-19T18:25:47.905Z" },
-    { url = "https://files.pythonhosted.org/packages/49/58/04ebef55f680cb3cd2183ce13d04524386deb2c74c658606313db3f64695/pysentry_rs-0.4.2-cp313-cp313t-macosx_11_0_arm64.whl", hash = "sha256:c9e5ae5d4a1215226ef0a777c3de4848b17c5d7667bf0ab9573dac46d651d998", size = 4310512, upload-time = "2026-02-19T18:25:50.143Z" },
-    { url = "https://files.pythonhosted.org/packages/1a/37/1888177981beae30a8f846b00fdc2de12000853144019e7f023d0d60c3db/pysentry_rs-0.4.2-cp313-cp313t-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:1162078f5ecc2bd40d7a9336532a7b416e5d0dc4b33c1394a2d9a16cca1efa28", size = 4801047, upload-time = "2026-02-19T18:25:51.964Z" },
-    { url = "https://files.pythonhosted.org/packages/5f/96/fb300805657a08ee1c57247dcfaa009f6d29561a6a7d19e29fc5f29a8a91/pysentry_rs-0.4.2-cp313-cp313t-manylinux_2_28_aarch64.whl", hash = "sha256:2d8bac3288cc96f826fd69ebed6d7e80964438ec62f6aa29fb486d1a5a1d0c64", size = 4744621, upload-time = "2026-02-19T18:25:53.77Z" },
-    { url = "https://files.pythonhosted.org/packages/f2/e2/755637ba864fc0bb3ceb2e4fe1ab0aabc788e60b3b3af887daff533e20e6/pysentry_rs-0.4.2-cp313-cp313t-win_amd64.whl", hash = "sha256:e366650f44786da8f091914f7dd2e09318e3e0157d3c524dac6fa63ca032c44a", size = 4115587, upload-time = "2026-02-19T18:25:55.769Z" },
     { url = "https://files.pythonhosted.org/packages/85/a2/0b29628e4c0c5295c3c2f6a1136c7eb462868b0462cd24e4877bd1b71093/pysentry_rs-0.4.2-cp314-cp314-macosx_10_12_x86_64.whl", hash = "sha256:af87ff090327bd234cd736905320b6d476433aa8008673c1c936dbb64f5bf8f3", size = 4530045, upload-time = "2026-02-19T18:25:57.772Z" },
     { url = "https://files.pythonhosted.org/packages/04/b8/20bc559e7f78418f3563128887091f89fc2c96083add4ba729747527ef10/pysentry_rs-0.4.2-cp314-cp314-macosx_11_0_arm64.whl", hash = "sha256:f80a88e7717d0abd739f32a8d422816bbf2e9a5b57d316007344f9c71c04947b", size = 4309323, upload-time = "2026-02-19T18:25:59.902Z" },
     { url = "https://files.pythonhosted.org/packages/fe/09/05bb899e21c7fcb0efcf3bf013e6cd4c61153124603a2dc3795570430377/pysentry_rs-0.4.2-cp314-cp314-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:3b9ccb8d207a40be5c7f1b99e998d6c1b0faf04c8073911cb5240df2264a4bf9", size = 4797884, upload-time = "2026-02-19T18:26:03.67Z" },
